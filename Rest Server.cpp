@@ -6,10 +6,8 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 #include <unistd.h>
-#include <map>
 #include <string>
 #include <iostream>
-#include <fstream>
 #include <queue>
 #include <sys/time.h>
 #include <sys/types.h>
@@ -87,8 +85,6 @@ bool RESTServer::ParseHTMLHeader(string text, string client)
 				command += text[i];
 			}
 		}
-		int lock2 = text.find(host.c_str());
-
 		return CheckAuthroization(client, command); 
 	}
 	catch (std::exception& e)
